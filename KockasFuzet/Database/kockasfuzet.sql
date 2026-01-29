@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2026. Jan 29. 08:13
+-- Létrehozás ideje: 2026. Jan 29. 09:38
 -- Kiszolgáló verziója: 10.4.32-MariaDB
 -- PHP verzió: 8.2.12
 
@@ -32,7 +32,7 @@ USE `kockasfuzet`;
 CREATE TABLE `szamla` (
   `Id` int(11) NOT NULL,
   `SzolgaltatasAzon` int(11) NOT NULL,
-  `SzolgaltatoRovid` varchar(32) NOT NULL,
+  `SzolgaltatoRovid` varchar(8) NOT NULL,
   `Tol` date NOT NULL,
   `Ig` date NOT NULL,
   `Osszeg` int(11) NOT NULL,
@@ -68,7 +68,7 @@ INSERT INTO `szolgaltatas` (`Id`, `Nev`) VALUES
 --
 
 CREATE TABLE `szolgaltato` (
-  `RovidNev` varchar(32) NOT NULL,
+  `RovidNev` varchar(8) NOT NULL,
   `Nev` varchar(256) NOT NULL,
   `Ugyfelszolgalat` varchar(256) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_hungarian_ci;
