@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="KockasFuzet.Models.Szamla">
+    <Position X="3.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAEAQAAJAEAACABAAAgAAAgIAAIIAAACAABABgA=</HashCode>
+      <FileName>Models\Szamla.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KockasFuzet.Models.Szolgaltatas">
+    <Position X="8.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAACAEAAAgAAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>Models\Szolgaltatas.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KockasFuzet.Models.Szolgaltato">
+    <Position X="6.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAAADAEAAAgAAAAAAAAAAgAAAAIAAAAAAA=</HashCode>
+      <FileName>Models\Szolgaltato.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

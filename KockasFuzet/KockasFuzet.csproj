@@ -43,16 +43,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\Szamla.cs" />
+    <Compile Include="Models\Szolgaltatas.cs" />
+    <Compile Include="Models\Szolgaltato.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="Database\KockasFuzet.xlsx" />
+    <None Include="KockasfuzetClassDiagram1.cd" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Database\kockasfuzet.sql" />
     <Content Include="Database\kockasfuzet_relacios_sema.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Views\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
