@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2026. Jan 29. 09:38
+-- Létrehozás ideje: 2026. Feb 01. 18:24
 -- Kiszolgáló verziója: 10.4.32-MariaDB
 -- PHP verzió: 8.2.12
 
@@ -29,6 +29,7 @@ USE `kockasfuzet`;
 -- Tábla szerkezet ehhez a táblához `szamla`
 --
 
+DROP TABLE IF EXISTS `szamla`;
 CREATE TABLE `szamla` (
   `Id` int(11) NOT NULL,
   `SzolgaltatasAzon` int(11) NOT NULL,
@@ -47,6 +48,7 @@ CREATE TABLE `szamla` (
 -- Tábla szerkezet ehhez a táblához `szolgaltatas`
 --
 
+DROP TABLE IF EXISTS `szolgaltatas`;
 CREATE TABLE `szolgaltatas` (
   `Id` int(11) NOT NULL,
   `Nev` varchar(32) NOT NULL
@@ -67,6 +69,7 @@ INSERT INTO `szolgaltatas` (`Id`, `Nev`) VALUES
 -- Tábla szerkezet ehhez a táblához `szolgaltato`
 --
 
+DROP TABLE IF EXISTS `szolgaltato`;
 CREATE TABLE `szolgaltato` (
   `RovidNev` varchar(8) NOT NULL,
   `Nev` varchar(256) NOT NULL,
@@ -78,10 +81,10 @@ CREATE TABLE `szolgaltato` (
 --
 
 INSERT INTO `szolgaltato` (`RovidNev`, `Nev`, `Ugyfelszolgalat`) VALUES
-('ÉRV', 'ÉRV. Északmagyarországi Regionális Vízművek Zrt.', '3530 Miskolc, Corvin u. 2.\r\n'),
-('MiVíz', 'MIVÍZ Kft.\r\n', '3530 Miskolc, Corvin u. 2.\r\n'),
-('MVM Next', 'MVM Next Energiakereskedelmi Zrt.\r\n', '3530 Miskolc, Arany János utca 6-8.'),
-('Telecom', 'Magyar Telekom Nyrt.\r\n', '3525 Miskolc, Szentpáli utca 2 - 6.\r\n');
+('ÉRV', 'ÉRV. Északmagyarországi Regionális Vízművek Zrt.', '3530 Miskolc, Corvin u. 2.'),
+('MiVíz', 'MIVÍZ Kft.', '3530 Miskolc, Corvin u. 2.'),
+('MVM Next', 'MVM Next Energiakereskedelmi Zrt.', '3530 Miskolc, Arany János utca 6-8.'),
+('Telecom', 'Magyar Telekom Nyrt.', '3525 Miskolc, Szentpáli utca 2 - 6.');
 
 --
 -- Indexek a kiírt táblákhoz
