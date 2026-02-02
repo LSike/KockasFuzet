@@ -13,50 +13,43 @@ namespace KockasFuzet
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("1. Adott szolgáltató kiírása");
-            Console.WriteLine("2. Szolgáltatók kiírása");
-            Console.WriteLine("3. Szolgáltató felvitele");
-            Console.WriteLine("4. Kilépés");
-            string valasz = Console.ReadLine();
-            switch (valasz)
+            bool kilep = false;
+            while (!kilep)
             {
-                case "1":
-                    Szolgaltato probaSzolgaltato = new Szolgaltato()
-                    {
-                        RovidNev = "ABC",
-                        Nev = "Helyi kis abc",
-                        Ugyfelszolgalat = "Miskolc, Kamra köz 3"
-                    };
-                    new SzolgaltatoView().ShowSzolgaltato(probaSzolgaltato);
-                    break;
-                case "2":
-                    List<Szolgaltato> szolgaltatokListaja = new List<Szolgaltato>()
-                    {
-                        new Szolgaltato(){
+                Console.Clear();
+                Console.WriteLine("1. Adott szolgáltató kiírása");
+                Console.WriteLine("2. Szolgáltatók kiírása");
+                Console.WriteLine("3. Szolgáltató felvitele");
+                Console.WriteLine("4. Kilépés");
+                string valasz = Console.ReadLine();
+
+                switch (valasz)
+                {
+                    case "1":
+                        Szolgaltato probaSzolgaltato = new Szolgaltato()
+                        {
                             RovidNev = "ABC",
                             Nev = "Helyi kis abc",
-                            Ugyfelszolgalat = "Miskolc, Kamra köz 3"},
-                        new Szolgaltato(){
-                            RovidNev = "DEF",
-                            Nev = "Dávid Esti Falatozója",
-                            Ugyfelszolgalat = "Miskolc, Bendőtömő utca 4"},
-                        new Szolgaltato(){
-                            RovidNev = "GHI",
-                            Nev = "Gazdagság Halmozó Intézet",
-                            Ugyfelszolgalat = "Brüsszel, Tulip str. 3"},
-                    };
-                    List<Szolgaltato> listaAdatbazisbol = new SzolgaltatoController().GetSzolgaltatoList();
-                    new SzolgaltatoView().ShowSzolgaltatoList(listaAdatbazisbol);
-                    break;
-                case "3":
-                    Szolgaltato ujSzolgaltato = new SzolgaltatoView().CreateView();
-                    if(ujSzolgaltato != null)
-                        Console.WriteLine(new SzolgaltatoController().CreateSzolgaltato(ujSzolgaltato));
-                    break;
-                default:
-                    break;
+                            Ugyfelszolgalat = "Miskolc, Kamra köz 3"
+                        };
+                        new SzolgaltatoView().ShowSzolgaltato(probaSzolgaltato);
+                        break;
+                    case "2":
+                        List<Szolgaltato> listaAdatbazisbol = new SzolgaltatoController().GetSzolgaltatoList();
+                        new SzolgaltatoView().ShowSzolgaltatoList(listaAdatbazisbol);
+                        Console.WriteLine("Nyomj meg egy gombot a visszatéréshez...");
+                        Console.ReadKey();
+                        break;
+                    case "3":
+                        new SzolgaltatoView().CreateView();
+                        break;
+                    case "4":
+                        kilep = true;
+                        break;
+                    default:
+                        break;
+                }
             }
-            
         }
     }
 }

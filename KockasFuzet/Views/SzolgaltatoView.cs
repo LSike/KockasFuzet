@@ -1,4 +1,5 @@
-﻿using KockasFuzet.Models;
+﻿using KockasFuzet.Controllers;
+using KockasFuzet.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +12,7 @@ namespace KockasFuzet.Views
     {
         public SzolgaltatoView() { }
 
-        public Szolgaltato CreateView()
+        public void CreateView()
         {
             Szolgaltato szolgaltato = new Szolgaltato()
             {
@@ -46,7 +47,10 @@ namespace KockasFuzet.Views
                                 szolgaltato.Ugyfelszolgalat = Console.ReadLine();
                                 break;
                             case 3:
-                                return szolgaltato;                                
+                                string uzenet = new SzolgaltatoController().CreateSzolgaltato(szolgaltato);
+                                Console.Clear();
+                                Console.WriteLine(uzenet);
+                                break;
                             case 4:
                                 kilep = true;
                                 break;
@@ -54,7 +58,7 @@ namespace KockasFuzet.Views
                         break;
                 }
             }
-            return null;
+            
         }
 
         private static void ShowSzolgaltatoHighlight(Szolgaltato szolgaltato, int kiemeles)
@@ -76,6 +80,8 @@ namespace KockasFuzet.Views
             SetInverse(kiemeles, 4, bgcolor, fgcolor);
             Console.WriteLine("Mégsem");
             Console.WriteLine("Tab: léptet, Enter: választott szerkesztése, ");
+            Console.BackgroundColor = bgcolor;
+            Console.ForegroundColor = fgcolor;
         }
 
         private static void SetInverse(int kiemeles, int aktual, ConsoleColor bgcolor, ConsoleColor fgcolor)
