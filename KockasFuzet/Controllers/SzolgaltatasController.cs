@@ -40,6 +40,32 @@ namespace KockasFuzet.Controllers
             }
         }
 
+        public List<int> GetSzolgaltatasIdList()
+        {
+            MySqlConnection connection = new MySqlConnection();
+            string connectionString = "SERVER =localhost;DATABASE=kockasfuzet;UID=root;PASSWORD=;";
+            connection.ConnectionString = connectionString;
+            try
+            {
+                connection.Open();
+                string sql = "SELECT Id FROM szolgaltatas";
+                MySqlCommand command = new MySqlCommand(sql, connection);
+                List<int> eredmeny = new List<int>();
+                MySqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    eredmeny.Add(reader.GetInt32("Id"));                       
+                }
+                connection.Close();
+                return eredmeny;
+            }
+            catch (Exception)
+            {
+                //Console.WriteLine("Hiba történt: " + ex.Message);
+                return new List<int>();
+            }
+        }
+
         public Szolgaltatas GetSzolgaltatasById(int id)
         {
             MySqlConnection connection = new MySqlConnection();

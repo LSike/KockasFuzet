@@ -20,7 +20,8 @@ namespace KockasFuzet
                 Console.WriteLine("1. Adott szolgáltató kiírása");
                 Console.WriteLine("2. Szolgáltatók kiírása");
                 Console.WriteLine("3. Szolgáltató felvitele");
-                Console.WriteLine("4. Kilépés");
+                Console.WriteLine("4. Számla felvitele");
+                Console.WriteLine("5. Kilépés");
                 string valasz = Console.ReadLine();
 
                 switch (valasz)
@@ -44,6 +45,9 @@ namespace KockasFuzet
                         new SzolgaltatoView().CreateView();
                         break;
                     case "4":
+                        new SzamlaView().CreateSzamlaView();
+                        break;
+                    case "5":
                         kilep = true;
                         break;
                     default:

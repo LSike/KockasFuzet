@@ -92,6 +92,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\SzamlaController.cs" />
     <Compile Include="Controllers\SzolgaltatasController.cs" />
     <Compile Include="Controllers\SzolgaltatoController.cs" />
     <Compile Include="Models\Szamla.cs" />
@@ -99,6 +100,7 @@
     <Compile Include="Models\Szolgaltato.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\SzamlaView.cs" />
     <Compile Include="Views\SzolgaltatoView.cs" />
   </ItemGroup>
   <ItemGroup>

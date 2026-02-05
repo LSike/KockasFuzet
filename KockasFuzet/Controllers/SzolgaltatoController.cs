@@ -41,6 +41,33 @@ namespace KockasFuzet.Controllers
             }
         }
 
+        public List<string> GetSzolgaltatoRovidList()
+        {
+            MySqlConnection connection = new MySqlConnection();
+            string connectionString = "SERVER =localhost;DATABASE=kockasfuzet;UID=root;PASSWORD=;";
+            connection.ConnectionString = connectionString;
+            try
+            {
+                connection.Open();
+                string sql = "SELECT RovidNev FROM szolgaltato";
+                MySqlCommand command = new MySqlCommand(sql, connection);
+                List<string> eredmeny = new List<string>();
+                MySqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    eredmeny.Add(reader.GetString("RovidNev"));
+                }
+                connection.Close();
+                return eredmeny;
+            }
+            catch (Exception)
+            {
+                //Console.WriteLine("Hiba történt: " + ex.Message);
+                return new List<string>();
+            }
+        }
+
+
         public Szolgaltato GetSzolgaltatoByRovidNev(string rovidNev)
         {
             MySqlConnection connection = new MySqlConnection();
@@ -95,7 +122,6 @@ namespace KockasFuzet.Controllers
                 return "Hiba történt: " + ex.Message;
             }
         }
-
         public string UpdateSzolgaltato(Szolgaltato szolgaltato)
         {
             MySqlConnection connection = new MySqlConnection();
